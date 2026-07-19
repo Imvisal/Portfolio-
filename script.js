@@ -108,3 +108,33 @@ const navbar = document.querySelector(".navbar");
 menuBtn.addEventListener("click", () => {
     navbar.classList.toggle("active");
 });
+
+const name = "Visal Udyogi";
+const nameTyping = document.getElementById("nameTyping");
+
+let i = 0;
+let deleting = false;
+
+function typeName(){
+
+    if(!deleting){
+        nameTyping.textContent = name.substring(0,i++);
+    }else{
+        nameTyping.textContent = name.substring(0,i--);
+    }
+
+    if(i === name.length + 1){
+        deleting = true;
+        setTimeout(typeName,1000);
+        return;
+    }
+
+    if(i === 0){
+        deleting = false;
+    }
+
+    setTimeout(typeName,deleting ? 80 : 150);
+
+}
+
+typeName();
