@@ -591,4 +591,15 @@ nav a{
 .skill-title:hover i{
     transform:scale(1.2) rotate(-8deg);
     color:#67e8f9;
+} 
+
+.project-link{
+    text-decoration:none;
+    color:inherit;
+    display:block;
+}
+
+.project-link:hover .card{
+    transform:translateY(-10px) scale(1.02);
+    box-shadow:0 0 30px rgba(56,189,248,.4);
 }
