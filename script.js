@@ -101,3 +101,10 @@ document.querySelectorAll(".card,.about-card,.skill").forEach(el => {
   observer.observe(el);
   
 });
+
+const menuBtn = document.querySelector(".menu-btn");
+const navbar = document.querySelector(".navbar");
+
+menuBtn.addEventListener("click", () => {
+    navbar.classList.toggle("active");
+});
