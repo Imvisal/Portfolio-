@@ -109,22 +109,3 @@ menuBtn.addEventListener("click", () => {
     navbar.classList.toggle("active");
 });
 
-const nameTyping = document.getElementById("nameTyping");
-
-if (nameTyping) {
-
-    const name = "Visal Udyogi";
-    let index = 0;
-
-    function typeName() {
-
-        if (index < name.length) {
-            nameTyping.textContent += name.charAt(index);
-            index++;
-            setTimeout(typeName, 150);
-        }
-
-    }
-
-    typeName();
-}
