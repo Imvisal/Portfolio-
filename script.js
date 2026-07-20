@@ -127,16 +127,19 @@ window.onload = typeWriter;
 
 const about = document.getElementById("aboutTyping");
 
-const text = "I'm Visal Udyogi from Sri Lanka. I enjoy building clean, fast and responsive websites. Currently I'm learning modern web development and improving my front-end skills every day.";
+if (about) {
 
-let i = 0;
+    const aboutText = "I'm Visal Udyogi from Sri Lanka. I enjoy building clean, fast and responsive websites. Currently I'm learning modern web development and improving my front-end skills every day.";
 
-function typeAbout() {
-    if (i < text.length) {
-        about.innerHTML += text.charAt(i);
-        i++;
-        setTimeout(typeAbout, 25);
+    let aboutIndex = 0;
+
+    function typeAbout() {
+        if (aboutIndex < aboutText.length) {
+            about.textContent += aboutText.charAt(aboutIndex);
+            aboutIndex++;
+            setTimeout(typeAbout, 25);
+        }
     }
-}
 
-typeAbout();
+    typeAbout();
+}
