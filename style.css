@@ -759,3 +759,19 @@ body.light footer{
     background:#ddd;
     color:#111;
 }
+
+
+.theme-btn{
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    background: #38bdf8;
+    color: #fff;
+    cursor: pointer;
+    font-size: 20px;
+    z-index: 9999;
+}
