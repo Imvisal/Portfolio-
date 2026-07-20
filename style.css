@@ -422,8 +422,9 @@ footer{
     }
 
     .hero-text h1{
-    font-size: clamp(24px, 8vw, 30px);
+    font-size: 36px;
     line-height: 1.2;
+    word-break: break-word;
 }
 
     .hero-text h2 {
@@ -439,9 +440,10 @@ footer{
         max-width: 100%;
     }
 
-    .hero-text {
-        width: 100%;
-    }
+    .hero-text{
+    width:100%;
+    overflow:hidden;
+}
 
     .social {
         justify-content: center;
