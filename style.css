@@ -386,7 +386,16 @@ footer{
 /* ================= MOBILE ================= */
 
 @media (max-width:768px) {
+.hero-text{
+    width: 100%;
+    max-width: 100%;
+}
 
+.hero-text h1{
+    font-size: 3rem;
+    white-space: nowrap;
+    line-height: 1.2;
+}
     
 .typing-name{
     font-size:32px;
