@@ -664,3 +664,39 @@ html, body {
 section {
     max-width: 100%;
 }
+
+const name = "Visal";
+const nameTyping = document.getElementById("nameTyping");
+
+let i = 0;
+
+function typeName() {
+    if (i < name.length) {
+        nameTyping.textContent += name.charAt(i);
+        i++;
+        setTimeout(typeName, 180);
+    }
+}
+
+typeName();
+
+#nameTyping{
+    color:#fff;
+}
+
+.hero-text h1{
+    font-size:55px;
+    font-weight:700;
+}
+
+.hero-text h1::after{
+    content:"|";
+    color:#38bdf8;
+    animation:blink .8s infinite;
+}
+
+@keyframes blink{
+    50%{
+        opacity:0;
+    }
+}
