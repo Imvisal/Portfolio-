@@ -530,7 +530,7 @@ nav a{
     cursor: pointer;
 }
 
-@media(max-width:768px) {
+
     
     .menu-btn {
         display: block;
