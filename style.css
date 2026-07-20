@@ -387,6 +387,10 @@ footer{
 
 @media (max-width:768px) {
 
+    
+.typing-name{
+    font-size:42px;
+}
     header {
         padding: 15px 20px;
         flex-direction: column;
@@ -574,14 +578,14 @@ nav a{
 }
 
 .typing-name{
-    width: 0;
-    overflow: hidden;
-    white-space: nowrap;
-    border-right: 4px solid #38bdf8;
-    font-size: 65px;
-    font-weight: 700;
-    color: white;
-
+    font-size:65px;
+    font-weight:700;
+    color:#fff;
+    white-space:normal;
+    border:none;
+    width:auto;
+    overflow:visible;
+}
     animation:
         typing 3s steps(13,end) forwards,
         blink .7s infinite;
