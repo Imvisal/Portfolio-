@@ -603,3 +603,19 @@ nav a{
     transform:translateY(-10px) scale(1.02);
     box-shadow:0 0 30px rgba(56,189,248,.4);
 }
+
+
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.hero,
+.container,
+section {
+    max-width: 100%;
+}
