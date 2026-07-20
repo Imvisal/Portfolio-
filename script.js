@@ -105,3 +105,17 @@ document.querySelectorAll(".card,.about-card,.skill").forEach(el => {
   observer.observe(el);
 
 });
+
+const themeBtn = document.getElementById("themeToggle");
+
+themeBtn.onclick = () => {
+
+    document.body.classList.toggle("light");
+
+    if(document.body.classList.contains("light")){
+        themeBtn.innerHTML = '<i class="fas fa-sun"></i>';
+    }else{
+        themeBtn.innerHTML = '<i class="fas fa-moon"></i>';
+    }
+
+};
