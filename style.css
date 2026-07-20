@@ -700,3 +700,19 @@ typeName();
         opacity:0;
     }
 }
+
+
+.about-card h3{
+    text-align: center;
+    font-size: 38px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 25px;
+}
+
+.about-card p{
+    text-align: left;
+    font-size: 18px;
+    line-height: 1.9;
+    color: #d1d5db;
+}
