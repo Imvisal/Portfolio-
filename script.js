@@ -123,3 +123,20 @@ function typeWriter() {
 }
 
 window.onload = typeWriter;
+
+
+const about = document.getElementById("aboutTyping");
+
+const text = "I'm Visal Udyogi from Sri Lanka. I enjoy building clean, fast and responsive websites. Currently I'm learning modern web development and improving my front-end skills every day.";
+
+let i = 0;
+
+function typeAbout() {
+    if (i < text.length) {
+        about.innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeAbout, 25);
+    }
+}
+
+typeAbout();
