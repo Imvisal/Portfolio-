@@ -716,3 +716,11 @@ typeName();
     line-height: 1.9;
     color: #d1d5db;
 }
+
+.about-card{
+    background: rgba(255,255,255,.05);
+    backdrop-filter: blur(15px);
+    padding: 40px;
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,.08);
+}
