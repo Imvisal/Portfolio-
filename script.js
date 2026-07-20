@@ -1,5 +1,5 @@
 /* ===========================
-   Typing Animation
+   Typing Animation (Job)
 =========================== */
 
 const words = [
@@ -15,131 +15,93 @@ let deleting = false;
 const typing = document.getElementById("typing");
 
 function typeEffect() {
-  
+
+  if (!typing) return;
+
   const current = words[wordIndex];
-  
+
   if (!deleting) {
     typing.textContent = current.substring(0, charIndex++);
   } else {
     typing.textContent = current.substring(0, charIndex--);
   }
-  
+
   let speed = deleting ? 60 : 120;
-  
+
   if (!deleting && charIndex > current.length) {
     deleting = true;
     speed = 1200;
   }
-  
+
   if (deleting && charIndex < 0) {
     deleting = false;
     wordIndex = (wordIndex + 1) % words.length;
     charIndex = 0;
   }
-  
+
   setTimeout(typeEffect, speed);
 }
 
 typeEffect();
 
+
 /* ===========================
-   Active Navigation
+   About Typing
 =========================== */
 
-const sections = document.querySelectorAll("section");
-const navLinks = document.querySelectorAll("nav a");
+const about = document.getElementById("aboutTyping");
 
-window.addEventListener("scroll", () => {
-  
-  let current = "";
-  
-  sections.forEach(section => {
-    const top = section.offsetTop - 150;
-    
-    if (window.scrollY >= top) {
-      current = section.getAttribute("id");
+if (about) {
+
+  const aboutText =
+    "I'm Visal Udyogi from Sri Lanka. I enjoy building clean, fast and responsive websites. Currently I'm learning modern web development and improving my front-end skills every day.";
+
+  let aboutIndex = 0;
+
+  function typeAbout() {
+
+    if (aboutIndex < aboutText.length) {
+
+      about.textContent += aboutText.charAt(aboutIndex);
+
+      aboutIndex++;
+
+      setTimeout(typeAbout, 25);
+
     }
-  });
-  
-  navLinks.forEach(link => {
-    
-    link.style.color = "#fff";
-    
-    if (link.getAttribute("href") === "#" + current) {
-      link.style.color = "#38bdf8";
-    }
-    
-  });
-  
-});
+
+  }
+
+  typeAbout();
+
+}
+
 
 /* ===========================
    Scroll Reveal
 =========================== */
 
 const observer = new IntersectionObserver((entries) => {
-  
+
   entries.forEach(entry => {
-    
+
     if (entry.isIntersecting) {
-      
+
       entry.target.style.opacity = "1";
       entry.target.style.transform = "translateY(0)";
-      
+
     }
-    
+
   });
-  
+
 });
 
 document.querySelectorAll(".card,.about-card,.skill").forEach(el => {
-  
+
   el.style.opacity = "0";
   el.style.transform = "translateY(40px)";
   el.style.transition = ".8s";
-  
+
   observer.observe(el);
-  
+
 });
-
-const menuBtn = document.querySelector(".menu-btn");
-const navbar = document.querySelector(".navbar");
-
-menuBtn.addEventListener("click", () => {
-    navbar.classList.toggle("active");
-});
-
-const nameTyping = document.getElementById("nameTyping");
-const text = "Visal";
-
-let i = 0;
-
-function typeWriter() {
-    if (i < text.length) {
-        nameTyping.textContent += text.charAt(i);
-        i++;
-        setTimeout(typeWriter, 200);
-    }
-}
-
-window.onload = typeWriter;
-
-
-const about = document.getElementById("aboutTyping");
-
-if (about) {
-
-    const aboutText = "I'm Visal Udyogi from Sri Lanka. I enjoy building clean, fast and responsive websites. Currently I'm learning modern web development and improving my front-end skills every day.";
-
-    let aboutIndex = 0;
-
-    function typeAbout() {
-        if (aboutIndex < aboutText.length) {
-            about.textContent += aboutText.charAt(aboutIndex);
-            aboutIndex++;
-            setTimeout(typeAbout, 25);
-        }
-    }
-
-    typeAbout();
-}
