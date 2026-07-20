@@ -109,3 +109,17 @@ menuBtn.addEventListener("click", () => {
     navbar.classList.toggle("active");
 });
 
+const nameTyping = document.getElementById("nameTyping");
+const text = "Visal";
+
+let i = 0;
+
+function typeWriter() {
+    if (i < text.length) {
+        nameTyping.textContent += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, 200);
+    }
+}
+
+window.onload = typeWriter;
