@@ -390,7 +390,10 @@ footer{
     width: 100%;
     max-width: 100%;
 }
-
+.hero-text h1{
+    font-size: 2.5rem;
+    white-space: nowrap;
+}
 .hero-text h1{
     font-size: 3rem;
     white-space: nowrap;
