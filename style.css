@@ -973,3 +973,30 @@ body.light footer{
     }
 
 }
+
+/* Vesak Lantern */
+
+.lantern{
+    position:absolute;
+    bottom:-80px;
+    font-size:35px;
+    animation:lanternFloat linear infinite;
+}
+
+@keyframes lanternFloat{
+
+    from{
+        transform:translateY(0);
+        opacity:0;
+    }
+
+    20%{
+        opacity:1;
+    }
+
+    to{
+        transform:translateY(-120vh);
+        opacity:0;
+    }
+
+}
