@@ -186,3 +186,40 @@ if (month === 12 && day >= 24 && day <= 26) {
     }
 
 }
+// ==========================
+// New Year Fireworks
+// ==========================
+
+if (month === 1 && day === 1) {
+
+    const colors = [
+        "#ff0000",
+        "#00ff00",
+        "#ffff00",
+        "#00ffff",
+        "#ff00ff",
+        "#ffffff"
+    ];
+
+    setInterval(() => {
+
+        const firework = document.createElement("div");
+
+        firework.className = "firework";
+
+        firework.style.left = Math.random() * 100 + "vw";
+        firework.style.top = Math.random() * 80 + "vh";
+        firework.style.background =
+            colors[Math.floor(Math.random() * colors.length)];
+
+        effect.appendChild(firework);
+
+        setTimeout(() => {
+
+            firework.remove();
+
+        },1500);
+
+    },300);
+
+}
