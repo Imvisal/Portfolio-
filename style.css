@@ -952,3 +952,24 @@ body.light footer{
     }
 
 }
+
+/* Avurudu Flowers */
+
+.flower{
+    position:absolute;
+    top:-30px;
+    font-size:22px;
+    animation:flowerFall linear infinite;
+}
+
+@keyframes flowerFall{
+
+    from{
+        transform:translateY(-20px) rotate(0deg);
+    }
+
+    to{
+        transform:translateY(110vh) rotate(360deg);
+    }
+
+}
