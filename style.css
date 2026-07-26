@@ -926,6 +926,27 @@ body.light footer{
         transform:translateY(-20px) rotate(0deg);
     }
 
+    /* Halloween */
+
+.bat{
+    position:absolute;
+    top:-40px;
+    font-size:30px;
+    animation:batFly linear infinite;
+}
+
+@keyframes batFly{
+
+    from{
+        transform:translateY(-40px) translateX(0);
+    }
+
+    to{
+        transform:translateY(110vh) translateX(120px);
+    }
+
+}
+
     to{
         transform:translateY(110vh) rotate(360deg);
     }
