@@ -324,26 +324,26 @@ if (month === 5 && (day === 12 || day === 13)) {
 
     }
 
-}
+console.log("JS Loaded");
 
 navigator.geolocation.getCurrentPosition(
-
 (position) => {
 
-    const lat = position.coords.latitude;
-    const lon = position.coords.longitude;
+    alert("Location Success!");
 
-    console.log("Latitude:", lat);
-    console.log("Longitude:", lon);
+    console.log(position.coords.latitude);
+    console.log(position.coords.longitude);
 
 },
-
 (error) => {
 
-    console.log("Location Permission Denied");
+    alert(error.message);
 
-}
+    console.log(error);
 
-);
+},
+{
+    enableHighAccuracy:true
+});
 
 
