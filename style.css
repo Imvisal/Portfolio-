@@ -819,3 +819,19 @@ body.light footer{
     width:100%;
     cursor:pointer;
 }
+
+/* Mouse Glow */
+
+.cursor-glow{
+    position: fixed;
+    width: 180px;
+    height: 180px;
+    background: radial-gradient(circle,
+    rgba(56,189,248,.35) 0%,
+    rgba(56,189,248,0) 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    transition: transform .08s linear;
+}
