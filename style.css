@@ -860,3 +860,30 @@ body.light footer{
     transform: translateY(-5px);
     box-shadow: 0 0 25px #38bdf8;
 }
+
+/* Seasonal Effect */
+
+#season-effect{
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 9999;
+}
+
+.snow{
+    position: absolute;
+    top: -10px;
+    color: white;
+    font-size: 18px;
+    animation: snowfall linear infinite;
+}
+
+@keyframes snowfall{
+    from{
+        transform: translateY(-10px);
+    }
+    to{
+        transform: translateY(110vh);
+    }
+}
