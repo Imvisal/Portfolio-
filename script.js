@@ -155,3 +155,34 @@ topBtn.addEventListener("click", () => {
     });
 
 });
+
+/* ===========================
+   Seasonal Effects
+=========================== */
+
+const effect = document.getElementById("season-effect");
+
+const today = new Date();
+const month = today.getMonth() + 1;
+const day = today.getDate();
+
+// Christmas Snow
+if (month === 12 && day >= 24 && day <= 26) {
+
+    for (let i = 0; i < 60; i++) {
+
+        const snow = document.createElement("div");
+
+        snow.className = "snow";
+        snow.innerHTML = "❄";
+
+        snow.style.left = Math.random() * 100 + "vw";
+        snow.style.animationDuration = (5 + Math.random() * 6) + "s";
+        snow.style.fontSize = (12 + Math.random() * 20) + "px";
+        snow.style.opacity = Math.random();
+
+        effect.appendChild(snow);
+
+    }
+
+}
