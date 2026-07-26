@@ -835,3 +835,28 @@ body.light footer{
     z-index: 9999;
     transition: transform .08s linear;
 }
+
+/* Back To Top */
+
+#topBtn{
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    background: #38bdf8;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    display: none;
+    transition: .3s;
+    z-index: 999;
+    box-shadow: 0 0 15px rgba(56,189,248,.5);
+}
+
+#topBtn:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 0 25px #38bdf8;
+}
