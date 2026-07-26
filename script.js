@@ -270,3 +270,32 @@ if (month === 10 && day === 31) {
     }
 
 }
+
+// ==========================
+// Sinhala & Tamil New Year
+// ==========================
+
+if (month === 4 && (day === 13 || day === 14)) {
+
+    const flowers = ["🌸","🌺","🌼","🌷"];
+
+    for(let i = 0; i < 60; i++){
+
+        const flower = document.createElement("div");
+
+        flower.className = "flower";
+        flower.innerHTML = flowers[Math.floor(Math.random() * flowers.length)];
+
+        flower.style.left = Math.random() * 100 + "vw";
+        flower.style.animationDuration = (5 + Math.random() * 5) + "s";
+        flower.style.fontSize = (18 + Math.random() * 18) + "px";
+
+        effect.appendChild(flower);
+
+    }
+
+    setTimeout(() => {
+        alert("🌸 සුභ අලුත් අවුරුද්දක් වේවා! 🌸");
+    },1000);
+
+}
