@@ -223,3 +223,27 @@ if (month === 1 && day === 1) {
     },300);
 
 }
+
+// ==========================
+// Valentine's Hearts
+// ==========================
+
+if (month === 2 && day === 14) {
+
+    for (let i = 0; i < 50; i++) {
+
+        const heart = document.createElement("div");
+
+        heart.className = "heart";
+        heart.innerHTML = "❤️";
+
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.animationDuration = (5 + Math.random() * 5) + "s";
+        heart.style.fontSize = (15 + Math.random() * 20) + "px";
+        heart.style.opacity = Math.random();
+
+        effect.appendChild(heart);
+
+    }
+
+}
