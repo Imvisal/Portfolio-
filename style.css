@@ -887,3 +887,25 @@ body.light footer{
         transform: translateY(110vh);
     }
 }
+
+.firework{
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    animation: explode 1.5s ease-out infinite;
+}
+
+@keyframes explode{
+
+    0%{
+        transform: scale(0);
+        opacity:1;
+    }
+
+    100%{
+        transform: scale(18);
+        opacity:0;
+    }
+
+}
