@@ -325,3 +325,138 @@ if (month === 5 && (day === 12 || day === 13)) {
     }
 
 }
+
+/* ===========================
+   AI CHAT + GEMINI
+=========================== */
+
+const chatToggle = document.getElementById("chatToggle");
+const chatBox = document.getElementById("chatBox");
+const chatMessages = document.getElementById("chatMessages");
+const chatInput = document.getElementById("chatInput");
+const sendBtn = document.getElementById("sendBtn");
+
+const API_KEY = "AQ.Ab8RN6KpwQGzOKgydSPdo7t48Z6EPF5r2F8nrHBH5TaqLrJUBw";
+
+// Open / Close Chat
+chatToggle.addEventListener("click", () => {
+
+    if(chatBox.style.display === "flex"){
+        chatBox.style.display = "none";
+    }else{
+        chatBox.style.display = "flex";
+    }
+
+});
+
+// Send Message
+sendBtn.addEventListener("click", sendMessage);
+
+chatInput.addEventListener("keypress",(e)=>{
+
+    if(e.key==="Enter"){
+        sendMessage();
+    }
+
+});
+
+async function sendMessage(){
+
+    const message = chatInput.value.trim();
+
+    if(message==="") return;
+
+    // User Message
+
+    chatMessages.innerHTML += `
+    <div class="user-message">
+        ${message}
+    </div>
+    `;
+
+    chatInput.value="";
+
+    // Typing...
+
+    chatMessages.innerHTML += `
+    <div class="bot-message" id="typing">
+        Typing...
+    </div>
+    `;
+
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+
+    try{
+
+        const response = await fetch(
+        `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${API_KEY}`,
+        {
+
+            method:"POST",
+
+            headers:{
+                "Content-Type":"application/json"
+            },
+
+            body:JSON.stringify({
+
+                contents:[
+                    {
+                        parts:[
+                            {
+                                text:
+`You are Visal's AI assistant.
+
+Only answer questions about:
+
+- Visal
+- Skills
+- Portfolio
+- Projects
+- Contact
+
+If someone asks unrelated questions reply politely:
+
+"I can only answer questions about Visal's portfolio."
+
+User Question:
+
+${message}`
+                            }
+                        ]
+                    }
+                ]
+
+            })
+
+        });
+
+        const data = await response.json();
+
+        document.getElementById("typing").remove();
+
+        const reply =
+        data.candidates?.[0]?.content?.parts?.[0]?.text
+        || "Sorry, I couldn't answer that.";
+
+        chatMessages.innerHTML += `
+        <div class="bot-message">
+            ${reply}
+        </div>
+        `;
+
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+
+    }catch{
+
+        document.getElementById("typing").remove();
+
+        chatMessages.innerHTML += `
+        <div class="bot-message">
+            Error connecting to Gemini.
+        </div>
+        `;
+
+    }
+
+}
