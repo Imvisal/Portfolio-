@@ -299,3 +299,29 @@ if (month === 4 && (day === 13 || day === 14)) {
     },1000);
 
 }
+
+// ==========================
+// Vesak Lanterns
+// ==========================
+
+// Example dates (change every year)
+if (month === 5 && (day === 12 || day === 13)) {
+
+    const lanterns = ["🏮","🪔","🏮"];
+
+    for(let i = 0; i < 20; i++){
+
+        const lantern = document.createElement("div");
+
+        lantern.className = "lantern";
+        lantern.innerHTML = lanterns[Math.floor(Math.random()*lanterns.length)];
+
+        lantern.style.left = Math.random() * 100 + "vw";
+        lantern.style.animationDuration = (8 + Math.random()*6) + "s";
+        lantern.style.fontSize = (25 + Math.random()*25) + "px";
+
+        effect.appendChild(lantern);
+
+    }
+
+}
