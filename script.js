@@ -326,4 +326,24 @@ if (month === 5 && (day === 12 || day === 13)) {
 
 }
 
+navigator.geolocation.getCurrentPosition(
+
+(position) => {
+
+    const lat = position.coords.latitude;
+    const lon = position.coords.longitude;
+
+    console.log("Latitude:", lat);
+    console.log("Longitude:", lon);
+
+},
+
+(error) => {
+
+    console.log("Location Permission Denied");
+
+}
+
+);
+
 
