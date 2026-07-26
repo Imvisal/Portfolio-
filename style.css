@@ -909,3 +909,25 @@ body.light footer{
     }
 
 }
+
+/* Valentine's Hearts */
+
+.heart{
+    position:absolute;
+    top:-30px;
+    color:#ff4d6d;
+    font-size:20px;
+    animation:heartFall linear infinite;
+}
+
+@keyframes heartFall{
+
+    from{
+        transform:translateY(-20px) rotate(0deg);
+    }
+
+    to{
+        transform:translateY(110vh) rotate(360deg);
+    }
+
+}
