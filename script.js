@@ -247,3 +247,26 @@ if (month === 2 && day === 14) {
     }
 
 }
+
+// ==========================
+// Halloween
+// ==========================
+
+if (month === 10 && day === 31) {
+
+    for (let i = 0; i < 30; i++) {
+
+        const bat = document.createElement("div");
+
+        bat.className = "bat";
+        bat.innerHTML = "🦇";
+
+        bat.style.left = Math.random() * 100 + "vw";
+        bat.style.animationDuration = (6 + Math.random() * 5) + "s";
+        bat.style.fontSize = (20 + Math.random() * 20) + "px";
+
+        effect.appendChild(bat);
+
+    }
+
+}
