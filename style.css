@@ -775,3 +775,47 @@ body.light footer{
     font-size: 20px;
     z-index: 9999;
 }
+
+/* Contact */
+
+.contact-card{
+    max-width:600px;
+    margin:auto;
+    background:rgba(255,255,255,.05);
+    backdrop-filter:blur(10px);
+    padding:30px;
+    border-radius:20px;
+    border:1px solid rgba(255,255,255,.08);
+}
+
+.contact-card form{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+.contact-card input,
+.contact-card textarea{
+    width:100%;
+    padding:15px;
+    border:none;
+    outline:none;
+    border-radius:10px;
+    background:#1e293b;
+    color:#fff;
+    font-size:16px;
+}
+
+.contact-card textarea{
+    resize:none;
+}
+
+.contact-card input:focus,
+.contact-card textarea:focus{
+    border:2px solid #38bdf8;
+}
+
+.contact-card .btn{
+    width:100%;
+    cursor:pointer;
+}
