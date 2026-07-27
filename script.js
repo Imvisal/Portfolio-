@@ -324,26 +324,5 @@ if (month === 5 && (day === 12 || day === 13)) {
 
     }
 
-console.log("JS Loaded");
-
-navigator.geolocation.getCurrentPosition(
-(position) => {
-
-    alert("Location Success!");
-
-    console.log(position.coords.latitude);
-    console.log(position.coords.longitude);
-
-},
-(error) => {
-
-    alert(error.message);
-
-    console.log(error);
-
-},
-{
-    enableHighAccuracy:true
-});
 
 
